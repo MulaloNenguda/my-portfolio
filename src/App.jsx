@@ -141,6 +141,21 @@ const PROJECTS = [
 // WEBSITE LAYOUT
 
 export default function App() {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const myForm = e.target;
+    const formData = new FormData(myForm);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => alert("Message sent successfully!"))
+      .catch((error) => alert("Error sending message."));
+  };
+
   return (
     <div className="bg-[#111] text-[#f5f5f5] font-sans selection:bg-white selection:text-black">
 
@@ -548,6 +563,7 @@ export default function App() {
               name="contact"
               method="POST"
               data-netlify="true"
+              onSubmit={handleSubmit}
               className="flex flex-col gap-10"
             >
 
