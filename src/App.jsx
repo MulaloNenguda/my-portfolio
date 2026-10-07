@@ -66,7 +66,7 @@ const PROFILE = {
   lastName: "NENGUDA",
   role: "Junior Data Analyst",
 
-  bio: "I am an early Information Technology professional specializing in turning raw data into meaningful insights and building efficient, data-driven systems. My work bridges software development, database architecture, and modern cloud and AI platforms, with a constant focus on solving real-world challenges through practical problem-solving. Whether I am analyzing structured datasets, designing robust database solutions, or developing scalable applications, my goal is to build intelligent, high-impact technical solutions across data and software.",
+  bio: "I am an early Information Technology professional specializing in turning raw data into meaningful insights and building efficient, data driven systems. My work bridges software development, database architecture, and modern cloud and AI platforms, with a constant focus on solving real world challenges through practical problem solving. Whether I am analyzing structured datasets, designing robust database solutions, or developing scalable applications, my goal is to build intelligent, high impact technical solutions across data and software.",
 
   phone: "+27 538 6667",
   email: "thomasmletsoalo@gmail.com",
