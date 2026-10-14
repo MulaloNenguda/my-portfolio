@@ -68,7 +68,7 @@ const PROFILE = {
 
   bio: "I am an early Information Technology professional specializing in turning raw data into meaningful insights and building efficient, data driven systems. My work bridges software development, database architecture, and modern cloud and AI platforms, with a constant focus on solving real world challenges through practical problem solving. Whether I am analyzing structured datasets, designing robust database solutions, or developing scalable applications, my goal is to build intelligent, high impact technical solutions across data and software.",
 
-  phone: "+27 538 6667",
+  phone: "082 538 6667",
   email: "thomasmletsoalo@gmail.com",
   address: "Centurion, Gauteng, South Africa"
 };
@@ -120,21 +120,26 @@ const SERVICES = [
 
 const PROJECTS = [
   {
-    title: "NEOVERSE AI",
+    title: "NEOVERSE CITY",
     desc: "A comprehensive survival simulation managing dynamic city events through custom file handlers and strict Big-O efficiency analysis.",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop",
+    link: "https://github.com/MulaloNenguda/neoverse-city-survival-system"
   },
 
   {
     title: "B2B MICRO-SAAS",
     desc: "A tailored software solution currently in development, targeted at streamlining operations for local wholesalers and distributors.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    link: ""
   },
 
   {
     title: "VELIQ WEB",
     desc: "Modern web development project demonstrating practical UI/UX implementation and responsive component architecture.",
-    image: "https://scontent-jnb2-1.cdninstagram.com/v/t51.82787-19/700723491_18064500956414997_8730517733536086424_n.jpg?_nc_cat=108&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy44MjQuQzMifQ%3D%3D&_nc_ohc=EZ8fmr-bxI0Q7kNvwHsTnbQ&_nc_oc=Adrp_3zQ5l_75xrqGhvV0-JAkUuevrikIRHgyO0YI5GPoBjO0zeUnJOj5-7Y7XAlVbA&_nc_zt=24&_nc_ht=scontent-jnb2-1.cdninstagram.com&_nc_gid=y5y490gjQi_pAi3AgpZEkA&_nc_ss=78aaf&oh=00_AQNUe6OMiao-nHs8XGY8_M5ks-SuomSolC-GXCV7PRYI7w&oe=6ACB4960"
+    image: "/ve.svg",
+    fit: "contain",
+    bg: "#113224",
+    link: "https://veliqv.netlify.app"
   }
 ];
 
@@ -152,7 +157,10 @@ export default function App() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => alert("Message sent successfully!"))
+      .then(() => {
+        alert("Message sent successfully!");
+        myForm.reset();
+      })
       .catch((error) => alert("Error sending message."));
   };
 
@@ -161,9 +169,9 @@ export default function App() {
 
       {/* NAVIGATION BAR */}
 
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#111]/90 backdrop-blur-md px-6 md:px-12 py-6 flex justify-between items-center uppercase text-xs tracking-widest font-bold">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-[#111]/90 backdrop-blur-md px-4 md:px-12 py-6 flex justify-between items-center uppercase text-[10px] md:text-xs tracking-widest font-bold">
 
-        <div className="flex gap-8">
+        <div className="flex gap-4 md:gap-8">
           <a
             href="#home"
             className="hover:text-gray-400 transition-colors"
@@ -277,7 +285,7 @@ export default function App() {
 
       <section
         id="about"
-        className="px-6 md:px-12 py-32 bg-[#111] flex flex-col items-center text-center"
+        className="scroll-mt-20 px-6 md:px-12 py-32 bg-[#111] flex flex-col items-center text-center"
       >
 
         <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-12">
@@ -295,7 +303,7 @@ export default function App() {
 
       <section
         id="services"
-        className="px-6 md:px-12 py-32 bg-[#111] border-b border-white/10"
+        className="scroll-mt-20 px-6 md:px-12 py-32 bg-[#111] border-b border-white/10"
       >
 
         <div className="max-w-7xl mx-auto">
@@ -391,7 +399,7 @@ export default function App() {
 
       <section
         id="resume"
-        className="px-6 md:px-12 py-32 bg-[#161616]"
+        className="scroll-mt-20 px-6 md:px-12 py-32 bg-[#161616]"
       >
 
         <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-12 text-center">
@@ -413,6 +421,16 @@ export default function App() {
 
         </div>
 
+        <p className="text-center mt-8">
+          <a
+            href="/resume.pdf"
+            download
+            className="text-xs font-bold uppercase tracking-widest border border-white/20 px-8 py-4 inline-block hover:bg-white hover:text-black transition-colors"
+          >
+            Download Resume
+          </a>
+        </p>
+
       </section>
 
 
@@ -420,7 +438,7 @@ export default function App() {
 
       <section
         id="portfolio"
-        className="px-6 md:px-12 py-32 bg-[#111]"
+        className="scroll-mt-20 px-6 md:px-12 py-32 bg-[#111]"
       >
 
         <h2 className="text-sm uppercase tracking-widest text-gray-500 mb-20 text-center">
@@ -441,12 +459,18 @@ export default function App() {
 
               {/* Project Image */}
 
-              <div className="w-full aspect-video bg-gray-900 mb-10 overflow-hidden border border-white/5 relative">
+              <div
+                className="w-full aspect-video bg-gray-900 mb-10 overflow-hidden border border-white/5 relative"
+                style={project.bg ? { backgroundColor: project.bg } : undefined}
+              >
 
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  loading="lazy"
+                  className={`w-full h-full ${
+                    project.fit === "contain" ? "object-contain" : "object-cover"
+                  } opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700`}
                 />
 
               </div>
@@ -468,11 +492,22 @@ export default function App() {
 
               {/* View Project Button */}
 
-              <button
-                className="mt-auto self-center text-xs font-bold uppercase tracking-widest border border-white/20 px-8 py-4 hover:bg-white hover:text-black transition-colors"
-              >
-                View Project
-              </button>
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto self-center text-xs font-bold uppercase tracking-widest border border-white/20 px-8 py-4 hover:bg-white hover:text-black transition-colors"
+                >
+                  View Project
+                </a>
+              ) : (
+                <span
+                  className="mt-auto self-center text-xs font-bold uppercase tracking-widest border border-white/10 px-8 py-4 text-gray-600 cursor-not-allowed"
+                >
+                  Coming Soon
+                </span>
+              )}
 
             </div>
 
@@ -487,7 +522,7 @@ export default function App() {
 
       <section
         id="contact"
-        className="px-6 md:px-12 py-32 bg-[#161616]"
+        className="scroll-mt-20 px-6 md:px-12 py-32 bg-[#161616]"
       >
 
         <div className="grid md:grid-cols-2 gap-20 max-w-6xl mx-auto">
@@ -526,9 +561,12 @@ export default function App() {
                   Phone
                 </p>
 
-                <p className="text-gray-500">
+                <a
+                  href={`tel:${PROFILE.phone.replace(/\s/g, "")}`}
+                  className="text-gray-500 hover:text-white transition-colors"
+                >
                   {PROFILE.phone}
-                </p>
+                </a>
 
               </div>
 
@@ -539,9 +577,12 @@ export default function App() {
                   E-mail
                 </p>
 
-                <p className="text-gray-500">
+                <a
+                  href={`mailto:${PROFILE.email}`}
+                  className="text-gray-500 hover:text-white transition-colors normal-case"
+                >
                   {PROFILE.email}
-                </p>
+                </a>
 
               </div>
 
@@ -623,6 +664,13 @@ export default function App() {
         </div>
 
       </section>
+
+
+      {/* FOOTER */}
+
+      <footer className="px-6 md:px-12 py-8 bg-[#111] text-center text-xs tracking-widest uppercase text-gray-600">
+        © {new Date().getFullYear()} {PROFILE.firstName} {PROFILE.lastName}
+      </footer>
 
     </div>
   );
